@@ -1,0 +1,51 @@
+
+<button id="get-button" onclick="getTableService()">Get Movie list</button>
+<div id="jsondatahere" ></div>
+
+<script src="azure-storage.table.js"></script>
+
+<script>
+    
+/*  var azure = require('azure-storage');
+   function getTableService() {
+               
+        var tableUri= "https://netflixstorageacc.table.core.windows.net";
+        var sas ="?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-12-08T02:55:21Z&st=2019-12-07T18:55:21Z&spr=https&sig=fnpWblnCXMg%2Bkdj%2FfTOU91WqKyIVCC8vyWnnEgkbCxY%3D";
+        var tableService = AzureStorage.Table.createTableServiceWithSas(tableUri, sas).withFilter(new AzureStorage.Table.ExponentialRetryPolicyFilter());
+        alert(tableService)
+        return tableService;
+   }
+  
+  */
+  function getTableService() {
+    alert("Begin");
+    var tableUri= "https://netflixstorageacc.table.core.windows.net";
+    var sas ="?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-12-10T12:39:08Z&st=2019-12-08T04:39:08Z&spr=https,http&sig=ztEkFQz%2Bn7c%2FWtayZ6d45sn637QqIj2K1%2Fgf9ygJR4I%3D";
+    var tableService = AzureStorage.Table.createTableServiceWithSas(tableUri,sas);
+    var tableQuery = new AzureStorage.Table.TableQuery().top(200);
+    tableService.queryEntities('rrvmovies', tableQuery, null, function(error, results, response) {
+    if (error) 
+    {
+        // Query entities error
+        console.log(error);
+    } else 
+    {
+        for (var i = 0, entity; entity = results.entries[i]; i++) 
+        {
+            // Deal with entity object
+            console.log(entity);
+            console.log(entity.Filename._);
+            var nameandurl=entity.Filename._;
+            nameandurl +=" ";
+            nameandurl +=entity.FileURL._
+            document.getElementById("jsondatahere").innerHTML += nameandurl;
+
+        }
+    }
+});
+    
+    
+      alert("End");
+
+  }
+</script>

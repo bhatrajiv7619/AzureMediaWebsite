@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "profiles_nfcdn_name": {
+            "value": null
+        },
+        "loadBalancers_NFNLB_name": {
+            "value": null
+        },
+        "sites_CVB20191207011530_name": {
+            "value": null
+        },
+        "virtualMachines_netfixvm_name": {
+            "value": null
+        },
+        "publicIPAddresses_NFNLBPIP_name": {
+            "value": null
+        },
+        "trafficManagerProfiles_nftm_name": {
+            "value": null
+        },
+        "virtualNetworks_netflixvnet_name": {
+            "value": null
+        },
+        "networkInterfaces_netfixvm165_name": {
+            "value": null
+        },
+        "publicIPAddresses_netfixvm_ip_name": {
+            "value": null
+        },
+        "serverfarms_CVB20191207011530Plan_name": {
+            "value": null
+        },
+        "storageAccounts_cotvdevstorage_name": {
+            "value": null
+        },
+        "publicIPAddresses_VPNGatewayPIP_name": {
+            "value": null
+        },
+        "virtualNetworkGateways_VNGateway_name": {
+            "value": null
+        },
+        "storageAccounts_netflixstorageacc_name": {
+            "value": null
+        },
+        "networkSecurityGroups_netfixvm_nsg_name": {
+            "value": null
+        },
+        "trafficManagerProfiles_childrrvmobies_name": {
+            "value": null
+        }
+    }
+}
